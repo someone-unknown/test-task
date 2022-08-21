@@ -2,6 +2,13 @@
   "compilerOptions": {
     "baseUrl": "resource",
     "esModuleInterop": true,
+    "paths": {
+      "configuration/*": ["configuration/*"],
+      "database/*": ["database/*"],
+      "guard/*": ["guard/*"],
+      "route/*": ["route/*"],
+      "validator/*": ["validator/*"],
+    },
     "strict": true
   },
   "include": ["resource"],
