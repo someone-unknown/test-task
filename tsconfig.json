@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": "resource",
+    "esModuleInterop": true,
+    "strict": true
+  },
+  "include": ["resource"],
+  "exclude": ["node_modules"]
+}

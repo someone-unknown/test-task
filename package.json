@@ -1,6 +1,17 @@
 {
-  "devDependencies": {
+  "scripts": {
+    "prerestart": "webpack",
+    "prestart": "webpack",
+    "restart": "forever restart build/app.min.js",
+    "ssh": "ssh -i \"C:\\Users\\Gokudera Hayato\\.ssh\\test-task-kp.pem\" admin@18.185.59.235",
+    "start": "forever start build/app.min.js",
+    "stop": "forever stop build/app.min.js"
+  },
+  "dependencies": {
     "@types/node": "^18.7.8",
+    "forever": "^4.0.3"
+  },
+  "devDependencies": {
     "ts-loader": "^9.3.1",
     "typescript": "^4.7.4",
     "webpack": "^5.74.0",
