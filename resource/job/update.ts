@@ -15,16 +15,17 @@ async function getInstruments(): Promise<InstrumentRaw[]> {
         let buffer: Buffer = Buffer.alloc(0);
 
         response.on('data', (data: Buffer): void => {
-          buffer = Buffer.concat([buffer, data])
+          buffer = Buffer.concat([buffer, data]);
         });
 
         response.on('error', reject);
 
         response.on('end', (): void => {
+          console.log(buffer.toString('utf-8'));
           const data: InstrumentRaw[] = JSON.parse(buffer.toString('utf-8')).map((entry: any): InstrumentRaw => ({
             instrument_symbol: entry.symbol,
             instrument_name: entry.name,
-            usd_price: entry.market_data.current_price.usd
+            usd_price: entry.market_data.current_price.usd,
           }));
 
           resolve(data);

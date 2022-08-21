@@ -1,4 +1,5 @@
-const path = require('path');
+  const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
@@ -21,7 +22,7 @@ module.exports = {
       database: path.resolve(__dirname, 'resource/database'),
       guard: path.resolve(__dirname, 'resource/guard'),
       route: path.resolve(__dirname, 'resource/route'),
-      validator: path.resolve(__dirname, 'resource/validator'),
+      validation: path.resolve(__dirname, 'resource/validation'),
     }
   },
 
@@ -35,4 +36,12 @@ module.exports = {
       },
     ],
   },
+
+  plugins: [
+    new CopyPlugin({
+      patterns: [
+        { from: path.resolve(__dirname, '.env'), to: path.resolve(__dirname, 'build') },
+      ],
+    }),
+  ],
 };

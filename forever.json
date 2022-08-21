@@ -1,0 +1,14 @@
+[
+  {
+    "uid": "app",
+    "append": true,
+    "watch": false,
+    "script": "build/app.min.js"
+  },
+  {
+    "uid": "update",
+    "append": true,
+    "watch": false,
+    "script": "build/update.min.js"
+  }
+]

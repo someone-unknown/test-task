@@ -1,10 +1,10 @@
 import { Options as SequelizeOptions } from 'sequelize';
 
 export const databaseOptions: SequelizeOptions = {
-  host: 'db-1.cbbb0kkw7jyx.eu-central-1.rds.amazonaws.com',
-  port: 3306,
-  username: 'administrator',
-  password: 'UKRdRsJhD0R8a4YFhW5XAF096m03TxqtbJ5aEnbw',
+  host: process.env.DATABASE_HOST || 'localhost',
+  port: parseInt(String(process.env.DATABASE_PORT), 10) || 3306,
+  username: process.env.DATABASE_USERNAME,
+  password: process.env.DATABASE_PASSWORD,
   dialect: 'mysql',
   dialectModule: require('mysql2'),
   database: 'not-paid-test-task',
