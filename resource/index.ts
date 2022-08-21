@@ -3,6 +3,7 @@ import { Server } from 'http';
 import express, { Express } from 'express';
 import bodyParser from 'body-parser';
 import expressSession from 'express-session';
+import cors from 'cors';
 
 import { httpOptions } from 'configuration/http';
 import { sessionOptions } from 'configuration/session';
@@ -21,6 +22,7 @@ import { userValidation } from 'validation/user';
 const app: Express = express();
 const server: Server = new Server(app);
 
+app.use(cors());
 app.use(expressSession(sessionOptions));
 
 app.use(bodyParser.urlencoded());
