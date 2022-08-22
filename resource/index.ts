@@ -22,7 +22,7 @@ import { userValidation } from 'validation/user';
 const app: Express = express();
 const server: Server = new Server(app);
 
-app.use(cors());
+app.use(cors({ origin: true, credentials: true, methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'], allowedHeaders: ['Content-Type'] }));
 app.use(expressSession(sessionOptions));
 
 app.use(bodyParser.urlencoded({ extended: true }));
