@@ -11,7 +11,7 @@ export async function register(request: Request, response: Response): Promise<vo
     try {
       const user: User = await User.create(request.body);
       // @ts-ignore
-      request.session.user = user.id;
+      request.session.userId = user.id;
       response.send(user);
     } catch (error) {
       response.status(500).json(error);

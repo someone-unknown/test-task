@@ -2,7 +2,7 @@ import { SessionOptions } from 'express-session';
 
 export const sessionOptions: SessionOptions = {
   secret: process.env.SESSION_SECRET || '',
-  resave: false,
+  resave: true,
   saveUninitialized: true,
   cookie: {
     httpOnly: true,

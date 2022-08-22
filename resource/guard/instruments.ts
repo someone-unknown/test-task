@@ -4,7 +4,7 @@ import { User } from 'database/model/User';
 export async function instrumentsGuard(request: Request, response: Response, next: NextFunction): Promise<void> {
   try {
     // @ts-ignore
-    const user: User | null = await User.findByPk(request.session.user);
+    const user: User | null = await User.findByPk(request.session.userId);
 
     if (user && user.instruments_access) {
       next();

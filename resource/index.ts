@@ -25,7 +25,7 @@ const server: Server = new Server(app);
 app.use(cors());
 app.use(expressSession(sessionOptions));
 
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get('/instruments', instrumentsGuard, getInstruments);
