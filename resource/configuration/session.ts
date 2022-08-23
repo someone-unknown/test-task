@@ -8,7 +8,6 @@ export const sessionOptions: SessionOptions = {
     httpOnly: true,
     maxAge: 3 * 365 * 24 * 60 * 60 * 1000, // 3 years
     sameSite: 'none',
-    secure: true,
   },
 };
 
