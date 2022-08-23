@@ -3,7 +3,6 @@
     "prerestart": "webpack",
     "prestart": "webpack",
     "restart": "forever restart forever.json",
-    "ssh": "ssh -i \"C:\\Users\\Gokudera Hayato\\.ssh\\someone-unknown-kp.pem\" admin@3.73.123.252",
     "start": "forever start forever.json",
     "stop": "forever stop forever.json"
   },
