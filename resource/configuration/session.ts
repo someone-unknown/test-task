@@ -7,8 +7,6 @@ export const sessionOptions: SessionOptions = {
   cookie: {
     httpOnly: true,
     maxAge: 3 * 365 * 24 * 60 * 60 * 1000, // 3 years
-    sameSite: 'none',
-    secure: true,
   },
 };
 
