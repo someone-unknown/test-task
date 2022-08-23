@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 import expressSession from 'express-session';
 import cors from 'cors';
 
+import { corsOptions } from 'configuration/cors';
 import { httpOptions } from 'configuration/http';
 import { sessionOptions } from 'configuration/session';
 
@@ -22,7 +23,7 @@ import { userValidation } from 'validation/user';
 const app: Express = express();
 const server: Server = new Server(app);
 
-app.use(cors({ origin: true, credentials: true, methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'], allowedHeaders: ['Content-Type'] }));
+app.use(cors(corsOptions));
 app.use(expressSession(sessionOptions));
 
 app.use(bodyParser.urlencoded({ extended: true }));
